@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .modal {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.8;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 15px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #ff416c, #ff4b2b);
+      color: white;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 75, 43, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .emoji {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal">
+    <div class="emoji">⚠️</div>
+    <h1>404 - Oops!</h1>
+    <p>The page you’re looking for doesn’t exist or something went wrong.</p>
+
+    <button class="btn" onclick="goHome()">
+      Go Home
+    </button>
+  </div>
+
+  <script>
+    function goHome() {
+      window.location.href = "/";
+    }
+
+    // Optional popup alert on load
+    window.onload = function() {
+      setTimeout(() => {
+        alert("⚡ Error loading page. Redirect or go back!");
+      }, 500);
+    };
+  </script>
+</body>
+</html>
